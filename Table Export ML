@@ -3,7 +3,7 @@ CREATE TABLE Datos(
 	DayOfWeek INT,
 	OriginAirportID INT,
 	DestAirportID INT,
-	DepDelay DECIMAL(10,18),
-	ArrDelay DECIMAL(10,18),
-	Prediccion DECIMAL(10,18)
+	DepDelay DECIMAL(18,3),
+	ArrDelay DECIMAL(18,3),
+	Prediccion DECIMAL(18,3)
 )
