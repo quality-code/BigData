@@ -1,0 +1,9 @@
+CREATE TABLE Datos(
+	DayofMonth INT,
+	DayOfWeek INT,
+	OriginAirportID INT,
+	DestAirportID INT,
+	DepDelay DECIMAL(10,18),
+	ArrDelay DECIMAL(10,18),
+	Prediccion DECIMAL(10,18)
+)
