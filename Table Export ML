@@ -1,5 +1,0 @@
-dataset1 <- maml.mapInputPort(1)
-data.set<-dataset1[dataset1[,21]==1,]
-pos<-dataset1[dataset1[,21]==2,]
-for (i in 1:5) data.set<-rbind(data.set,pos)
-maml.mapOutputPort("data.set")
