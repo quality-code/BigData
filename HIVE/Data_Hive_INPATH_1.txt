@@ -1,6 +1,6 @@
-1|Diana|Gonzalez|Bogota
-2|Antonio|Suarez|Facatativa
-3|Pedro|Sarmiento|Funza
-4|Sara|Lopez|Bogota
-5|Juana|Corrales|Funza
-6|Pablo|Perez|Bogota
+1,Diana,Gonzalez,Bogota
+2,Antonio,Suarez,Facatativa
+3,Pedro,Sarmiento,Funza
+4,Sara,Lopez,Bogota
+5,Juana,Corrales,Funza
+6,Pablo,Perez,Bogota
