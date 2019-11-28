@@ -1,0 +1,23 @@
+--CREAR TABLA EXTERNA
+CREATE EXTERNAL TABLE customers
+(custid INT,fName STRING,lName STRING,city STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+STORED AS TEXTFILE
+LOCATION '/quality/data';
+
+--CREAR CARPETA CON mkdir Y CARGAR ARCHIVOS A HADOOP
+hdfs dfs -mkdir -p /quality/data 
+hdfs dfs -put Data1.txt /quality/data 
+
+--LISTA ARCHIVOS CARGADOS EN EL PASO ANTERIOR
+hdfs dfs -ls /hive/warehouse/customers
+hdfs dfs -ls /quality/data
+
+--BORRA LA TABLA
+drop customers
+
+--VUELVE A CONSULTAR ARCHIVOS *no aparece la tabla
+hdfs dfs -ls /hive/warehouse/customers
+--LOS ARCHIVOS ORIGINALES SE MANTIENEN
+hdfs dfs -ls /quality/data

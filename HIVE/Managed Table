@@ -1,0 +1,28 @@
+--CREA TABLA
+CREATE TABLE customers
+(custid INT,fName STRING,lName STRING,city STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+STORED AS TEXTFILE;
+
+--MUESTRA DESCRIPCION DE TABLA
+describe customers;
+describe formatted customers;
+
+--CREAR CARPETA CON mkdir Y CARGAR ARCHIVOS A HADOOP
+scp Data1.txt sshuser@CLUSTERNAME-ssh.azurehdinsight.net:Data1.txt 
+hdfs dfs -mkdir -p /quality/data 
+hdfs dfs -put Data1.txt /quality/data 
+
+--CARGAR DATOS A TABLA HIVE
+LOAD DATA LOCAL INPATH '/quality/data' overwrite into table customers;
+
+--LISTA ARCHIVOS CARGADOS EN EL PASO ANTERIOR
+hdfs dfs -ls /hive/warehouse/customers
+hdfs dfs -ls /quality/data
+
+--BORRA LA TABLA
+drop customers
+
+--VUELVE A CONSULTAR ARCHIVOS *no aparece ninguno
+hdfs dfs -ls /hive/warehouse/customers
